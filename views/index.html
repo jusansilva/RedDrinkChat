@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Drink Chat</title>
+
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- socket io -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <form id="chat">
+        <div class="title">Red Drink</div>
+        <input type="text" id="user" name="user" placeholder="Digite o nome do seu usuário">
+        <div class="messages"></div>
+        <input type="text" id="message" name="message" placeholder="Digite sua mensagem">
+        <button type="submit">Enviar</button>
+    </form>
+    <script type="text/javascript">
+        const socket = io('http://localhost:3000/');
+
+        function renderMessage(message) {
+            return $('.messages').append(`<div class='message'><strong>${message.user}: </strong> ${message.message}</div>`)
+        }
+
+        socket.on('historicMessage', function (messages) {
+            for (message of messages) {
+                renderMessage(message);
+            }
+        })
+
+        socket.on('message', function (message) {
+            renderMessage(message);
+        })
+
+
+        $("#chat").submit(function (event) {
+            event.preventDefault();
+            var user = $('#user').val();
+            var message = $('#message').val();
+
+
+            if (user.length && message.length) {
+                var objMessage = {
+                    user: user,
+                    message: message
+                }
+                renderMessage(objMessage);
+                socket.emit('sendMensage', objMessage);
+
+            }
+
+        })
+
+    </script>
+</body>
+
+</html>
