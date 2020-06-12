@@ -1,16 +1,20 @@
 {
-  "name": "RedDrinkChat",
+  "name": "reddrinkchat",
   "version": "1.0.0",
   "description": "Chat para integrar ao game RedDrink",
   "main": "app.js",
   "author": "Jusan Magno",
   "license": "MIT",
   "scripts": {
-    "dev": "node app.js"
+    "dev": "node app.js",
+    "start": "nodemon app.js"
   },
   "dependencies": {
     "ejs": "^3.1.3",
     "express": "^4.17.1",
     "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
