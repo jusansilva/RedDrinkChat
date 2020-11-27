@@ -8,19 +8,27 @@ Foi utilizado [NodeJS](https://nodejs.org/en/) com a framework [Express](http://
 
 
 ## Rodando o Projeto
-1 - Clone o projeto
+### 1 - Clone o projeto
 *git clone https://github.com/jusansilva/RedDrinkChat.git*
-2 - Acesse a pasta do projeto
+
+
+### 2 - Acesse a pasta do projeto
 *cd /RedDrinkChat*
-3 - Rode seu gesto de dependencias (NPM ou YARN)
+
+
+### 3 - Rode seu gesto de dependencias (NPM ou YARN)
 *npm install*
 ou
 *yarn install*
-4 - Rode o servidor
+
+
+### 4 - Rode o servidor
 *npm run dev*
 ou 
 *yarn dev*
-5 - Abra local host em mais de uma aba do navegador e vera o sistema em funcionamento real
+
+
+### 5 - Abra local host em mais de uma aba do navegador e vera o sistema em funcionamento real
 *http://localhost:3000/*
 
 
