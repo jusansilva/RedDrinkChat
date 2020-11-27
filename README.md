@@ -35,3 +35,4 @@ ou
 ## Autor
 ### Jusan Magno 
 #### Programador Full-stack
+#### [LinkdIn](https://www.linkedin.com/in/jusanmagno/)
